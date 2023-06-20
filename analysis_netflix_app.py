@@ -17,7 +17,7 @@ df_filmes = df.loc[df["type"] == "Movie"]
 df_series = df.loc[df["type"] != "Movie"]
 
 ##### Correção no formato da data adicionada na Netflix (date_added) #####
-df["date_added"] = df['date_added'].apply(lambda x: x.str.strip())
+df["date_added"] = df['date_added'].str.strip()
 df["date_added_aux"] = pd.to_datetime(df['date_added'], format="%B %d, %Y")
 
 # Criar coluna mês adicionada na Netflix a partir de (date_added).
